@@ -16,7 +16,7 @@ def numberOfLines():
 
     if lines.isdigit():
        lines = int(lines)
-       if 1 >= lines <= MAX_LINES:
+       if 1 <= lines <= MAX_LINES:
         break
        else:print(f"Please pick a line between (1-{MAX_LINES})")
     else: print(f"invalid number {lines}")

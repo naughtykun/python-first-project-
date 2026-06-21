@@ -25,4 +25,6 @@ def numberOfLines():
 def main():
    balance = deposit()
    NoOfLines = numberOfLines()
+
+main()
    

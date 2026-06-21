@@ -1,7 +1,9 @@
+MIN_BET = 10
+MAX_BET = 300
 MAX_LINES = 3
 def deposit():
   while True:
-    amount = input("Enter your deposit:   ")
+    amount = input("Enter your deposit:   $")
     if amount.isdigit():
        amount = int(amount)
        if amount > 10:
@@ -22,9 +24,24 @@ def numberOfLines():
     else: print(f"invalid number {lines}")
   return lines
   
+def Bet():
+  while True:
+    amount = input("Enter your bet:   $")
+    if amount.isdigit():
+       amount = int(amount)
+       if MIN_BET <= amount <= MAX_BET:
+        break
+       else: print("bet must be atleast 10$")
+    else: print(f"invalid bet {amount}")
+  return amount
+  
 def main():
    balance = deposit()
    NoOfLines = numberOfLines()
-
+   bet = Bet()
+   print(f"""Your deposit is: ${balance}
+Line you betted on: {NoOfLines}
+Your bet amount: ${bet}""")
+  
 main()
    

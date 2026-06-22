@@ -93,5 +93,6 @@ Your bet amount: ${bet}
 Total bet: ${totalBet}""")
 
     slot = SlotMachine(ROWS, COLS,symbolCount)
+    printMachine(slot)
 main()
    

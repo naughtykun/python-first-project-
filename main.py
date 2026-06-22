@@ -1,6 +1,45 @@
+import random
 MIN_BET = 10
 MAX_BET = 300
 MAX_LINES = 3
+
+ROWS = 3
+COLS = 3
+
+symbolCount = {
+  "Z": 2,
+  "A": 4,
+  "B": 6,
+  "C": 8
+}
+
+def SlotMachine(rows, cols, symbols):
+  allSym = []
+  for symbols , symbolCount in symbols.items():
+    for _ in range(symbolCount):
+        allSym.append(symbols)
+        
+  columns= [] 
+  for _ in range(cols):
+    column = []
+    currentSym = allSym[:]
+    for _ in range(rows):
+       value = random.choice(currentSym)
+       currentSym.remove(value)
+       column.append(value)
+    columns.append(column)
+  return columns
+  
+def printMachine(columns):
+   for rows in range(len(columns[0])):
+     for i, column in enumerate(columns):
+      if i != len(columns) - 1 :
+        print(column[rows], "|")
+      else: print(column[rows])
+
+
+
+
 def deposit():
   while True:
     amount = input("Enter your deposit:   $")
@@ -36,12 +75,23 @@ def Bet():
   return amount
   
 def main():
-   balance = deposit()
-   NoOfLines = numberOfLines()
-   bet = Bet()
-   print(f"""Your deposit is: ${balance}
-Line you betted on: {NoOfLines}
-Your bet amount: ${bet}""")
-  
+    balance = deposit()
+    NoOfLines = numberOfLines()
+
+    while True:
+        bet = Bet()
+        totalBet = bet * NoOfLines
+
+        if totalBet > balance:
+            print(f"Broke 😭 Your balance is ${balance}")
+        else:
+            break
+
+    print(f"""Your deposit is: ${balance}
+Line(s) you betted on: {NoOfLines}
+Your bet amount: ${bet}
+Total bet: ${totalBet}""")
+
+    slot = SlotMachine(ROWS, COLS,symbolCount)
 main()
    

@@ -8,7 +8,7 @@ if project == 1:
   os.system("clear")
   print("Starting the timer!")
 
-  time.sleep(2)
+  time.sleep(0.5)
 
   for x in range(realTime, 0 , -1): 
     seconds = x % 60
@@ -22,13 +22,13 @@ else:
 
  if project == 2:
   rows = int(input("How many rows?:  "))
-  time.sleep(1)
+  time.sleep(0.5)
   os.system("clear")
   columns = int(input("How many columns?:  "))
-  time.sleep(1)
+  time.sleep(0.5)
   os.system("clear")
   symbol = input("Pick a symbol/Emoji:  ")
-  time.sleep(1)
+  time.sleep(0.5)
   os.system("clear")
   
   for x in range(rows):
@@ -53,7 +53,11 @@ else:
               price =  input("Enter the price[q = QUIT] :  $")
               
               if price.lower == "q":
-                  break 
+                  os.system("clear")
+                  print("----Your cart---")
+                  for food in cart:
+                      print(food)
+                  
                   os.system("clear")
               elif price != int(price):
                   print("enter a valid price")

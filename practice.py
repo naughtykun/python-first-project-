@@ -1,8 +1,11 @@
+import os
 import time
 myTime = int(input("Which project? :  "))
 
 if myTime == 1: 
   realTime = int(input("Whats your timer count in seconds? :  "))
+  time.sleep(1)
+  os.system("clear")
   print("Starting the timer!")
 
   time.sleep(2)
@@ -19,8 +22,14 @@ else:
 
  if myTime == 2:
   rows = int(input("How many rows?:  "))
+  time.sleep(1)
+  os.system("clear")
   columns = int(input("How many columns?:  "))
+  time.sleep(1)
+  os.system("clear")
   symbol = input("Pick a symbol/Emoji:  ")
+  time.sleep(1)
+  os.system("clear")
   
   for x in range(rows):
      for y in range(columns):

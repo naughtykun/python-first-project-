@@ -1,25 +1,13 @@
-import math
-principle = 0
-rate = 0
-time = 0
+import time
+myTime = int(input("Whats your timer count in seconds? :  "))
 
-while principle <= 0:
-      principle = float(input("Enter your principal amount:  $"))
-      if principle <= 0:
-        print("invalid principle ")
-while rate <= 0.00:
-      rate = float(input("Enter your rate percentage:  $"))
-      if rate <= 0:
-        print("invalid rate ")
-while time <= 0.00:
-      time = int(input("Enter your time amount:  $"))
-      if time <= 0:
-        print("invalid time ")
-      
-      
-total = principle * pow((1 + rate / 100), time)
-      
-print(f"Balance after {time} years with original principle ${principle} and rate {rate}% is {total:.2f}")
-
-
-     
+for x in range(myTime, 0 , -1): 
+    seconds = x % 60
+    minutes = int(x/60) % 60
+    hours = int(x/3600)
+    
+    print("Starting the timer!")
+    time.sleep(2)
+    print(f"{hours:02}:{minutes:02}:{seconds:02}")
+    
+    

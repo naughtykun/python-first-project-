@@ -34,13 +34,13 @@ def printMachine(columns):
    for rows in range(len(columns[0])):
      for i, column in enumerate(columns):
       if i != len(columns) - 1 :
-        print(column[rows], "|")
+        print(column[rows], "|", end = "")
       else: print(column[rows])
 
 
 
 
-def deposit():
+def Deposit():
   while True:
     amount = input("Enter your deposit:   $")
     if amount.isdigit():
@@ -51,7 +51,7 @@ def deposit():
     else: print(f"invalid deposit {amount}")
   return amount
 
-def numberOfLines():
+def NumberOfLines():
   while True:
     lines = input(f"Enter the number of lines to bet on (1-{MAX_LINES})? ")
 
@@ -63,7 +63,7 @@ def numberOfLines():
     else: print(f"invalid number {lines}")
   return lines
   
-def Bet():
+def BET():
   while True:
     amount = input("Enter your bet:   $")
     if amount.isdigit():
@@ -74,12 +74,12 @@ def Bet():
     else: print(f"invalid bet {amount}")
   return amount
   
-def main():
-    balance = deposit()
-    NoOfLines = numberOfLines()
+def Main():
+    balance = Deposit()
+    NoOfLines = NumberOfLines()
 
     while True:
-        bet = Bet()
+        bet = BET()
         totalBet = bet * NoOfLines
 
         if totalBet > balance:
@@ -88,11 +88,14 @@ def main():
             break
 
     print(f"""Your deposit is: ${balance}
-Line(s) you betted on: {NoOfLines}
-Your bet amount: ${bet}
-Total bet: ${totalBet}""")
+          Line(s) you betted on: {NoOfLines}
+          Your bet amount: ${bet}
+          Total bet: ${totalBet}""")
 
     slot = SlotMachine(ROWS, COLS,symbolCount)
     printMachine(slot)
-main()
-   
+    
+  return slot
+
+
+Main()

@@ -24,6 +24,6 @@ else:
   
   for x in range(rows):
      for y in range(columns):
-         print(symbol)
+         print(symbol, end = "")
          
   

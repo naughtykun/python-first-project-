@@ -40,14 +40,19 @@ else:
      total = 0
      cart = []
      prices = []
+     
+     
      while True:
           food = input("Add a food in your cart [q = QUIT] :   ")
           if food.lower() == "q":
              break
+          
           else: 
               price =  input("Enter the price[q = QUIT] :  $")
               if price.lower == "q":
                   break 
+              elif price != int(price):
+                  print("enter a valid price")
               else: 
                   price = int(price)
                   cart.append(food)

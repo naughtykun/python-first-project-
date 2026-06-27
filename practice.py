@@ -1,8 +1,8 @@
 import os
 import time
-myTime = int(input("Which project? (1 = timer; 2 = cols/rows gen.py 3 = )  :  "))
+project = int(input("Which project? (1 = timer; 2 = cols/rows gen.py 3 = shopkart)  :  "))
 
-if myTime == 1: 
+if project == 1: 
   realTime = int(input("Whats your timer count in seconds? :  "))
   time.sleep(1)
   os.system("clear")
@@ -20,7 +20,7 @@ if myTime == 1:
     
 else: 
 
- if myTime == 2:
+ if project == 2:
   rows = int(input("How many rows?:  "))
   time.sleep(1)
   os.system("clear")
@@ -35,4 +35,21 @@ else:
      for y in range(columns):
          print(symbol, end = "")
      print()
-  
+ 
+ if project == 3:
+     total = 0
+     cart = []
+     prices = []
+     while True:
+          food = input("Add a food in your cart [q = QUIT] :   ")
+          if food.lower() == "q":
+             break
+          else: 
+              price =  input("Enter the price[q = QUIT] :  $")
+              if price.lower == "q":
+                  break 
+              else: 
+                  price = int(price)
+                  cart.append(food)
+              print(f"{food} is added to the kart!")
+              

@@ -1,6 +1,6 @@
 import os
 import time
-myTime = int(input("Which project? :  "))
+myTime = int(input("Which project? (1 = gamble.py; 2 = practice.py)  :  "))
 
 if myTime == 1: 
   realTime = int(input("Whats your timer count in seconds? :  "))

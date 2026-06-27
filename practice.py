@@ -47,7 +47,7 @@ else:
           food = input("Add a food in your cart [q = QUIT] :   ")
           if food.lower() == "q":
              os.system("clear")
-             break
+             print(f"Add the valid price first for {food}")
           
           else: 
               price =  input("Enter the price[q = QUIT] :  $")

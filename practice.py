@@ -43,14 +43,18 @@ else:
      
      
      while True:
+          os.system("clear")
           food = input("Add a food in your cart [q = QUIT] :   ")
           if food.lower() == "q":
+             os.system("clear")
              break
           
           else: 
               price =  input("Enter the price[q = QUIT] :  $")
+              
               if price.lower == "q":
                   break 
+                  os.system("clear")
               elif price != int(price):
                   print("enter a valid price")
               else: 

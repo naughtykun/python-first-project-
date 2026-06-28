@@ -1,6 +1,6 @@
-input("""Welcome to the program 
-        -----------------------
-          press s to start:  """)
+input("""Welcome to the program
+-----------------------
+press s to start:  """)
 
 dialPad = ((1, 2, 3),
             (4, 5, 6),
@@ -9,6 +9,6 @@ dialPad = ((1, 2, 3),
 
     
 for cols in dialPad:
-    for rows in dialPad:
+    for rows in cols:
         print(rows, end = " ")
     print()

@@ -18,6 +18,9 @@ if project == 1:
     time.sleep(1)
     print(f"{hours:02}:{minutes:02}:{seconds:02}")
     
+    
+    
+    
 else: 
 
  if project == 2:
@@ -36,6 +39,9 @@ else:
          print(symbol, end = "")
      print()
  
+ 
+ 
+ 
  if project == 3:
      total = 0
      cart = []
@@ -53,16 +59,17 @@ else:
               price =  input("Enter the price[q = QUIT] :  $")
               
               if price.lower == "q":
+                  break
                   os.system("clear")
-                  print("----Your cart---")
+                  print("----Your cart----")
                   for food in cart:
                       print(food)
                   
                   os.system("clear")
-              elif price != int(price):
+              elif not price.isdigit:
                   print("enter a valid price")
               else: 
                   price = int(price)
                   cart.append(food)
-              print(f"{food} is added to the kart!")
+              print(f"{food} is added to the cart!")
               
